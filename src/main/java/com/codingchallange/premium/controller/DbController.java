@@ -34,6 +34,12 @@ public class DbController
 		return new ResponseEntity<String>(dbService.importFactors() ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST);
 	}
 	
+	@PostMapping(Consts.URL_DB_IMPORT_ALL)
+	private ResponseEntity<String> importAll(@RequestBody(required = false) String csv)
+	{
+		return new ResponseEntity<String>(dbService.importRegions(csv) && dbService.importFactors() ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST);
+	}
+	
 	
 	@PostMapping(Consts.URL_DB_PREMIUM)
 	private ResponseEntity<Premium> savePremium(@RequestBody Premium premium)
