@@ -42,7 +42,7 @@ public class ImportFactors
 						"Cabrio",
 						"Coupè",
 						"Kleinwagen",
-						"Kompektwagen",
+						"Kompaktwagen",
 						"Kombi",
 						"SUV",
 						"VAN"
