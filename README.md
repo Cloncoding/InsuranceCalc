@@ -1,12 +1,20 @@
 Zum Starten der Anwendung:
 
-1. Zum Konfigurieren der Datenbankverbindung muss "/InsuranceCalc/src/main/resources/application.properties" angepasst werden. 
+1. Wenn die Datenbank PostgresSQL verwendet wird:
+   Zum Konfigurieren der Datenbankverbindung muss "/InsuranceCalc/src/main/resources/application.properties" angepasst werden. 
    Dazu müssen folgende Properties angepasst werden:
      1. url = URL zur Datenbank
      2. username = Benutzername für die Datenbank
      3. password = Passwort für den Datenbankbenutzer
+  
+   Standardmäßig wird als Datenbank H2 verwendet. Diese Datenbank ist vollständig integriert und muss nicht konfiguriert werden.
+   Um die Webconsole der Datenbank aufzurufen, muss die App gestartet sein. Außerdem muss in einem Webbrowser folgendes eingegeben werden:
+   "http://localhost:8080/h2-console"
+   Die "JDBC URL", "User Name" und "Password" sind identisch mit denen in der "application.properties".
+   Über die Webconsole können SQL-Statements auf der Datenbank ausgeführt werden.
+   Z.B. "SELECT * FROM PREMIUMS" damit werden alle vorher eingegebenen Prämienberechnungen angezeigt.
 
-2. Jetzt kann die SpringBoot-Anwendung gestartet werden. Am einfachsten über die IDE. Ansonsten muss:
+2. Am einfachsten wird die SpringBoot-Anwendung über die IDE gestartet. Ansonsten muss:
      1. Maven installiert werden
      2. Kommandozeile öffnen und in das Projektverzeichnis navigieren
      3. App mit "mvn spring-boot:run" starten
@@ -22,3 +30,4 @@ Zum Starten der Anwendung:
 
 5. Um die persistenten Berechnungen anzuzeigen, muss folgender GET ausgeführt werden:
    "GET http://localhost:8080/api/premium/show"
+   Wenn die H2-Datenbank genutzt wird, kann alternativ die H2-Webconsole verwendet werden (2. Abschnitt von Punkt 1.)
