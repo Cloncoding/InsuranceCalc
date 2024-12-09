@@ -1,6 +1,6 @@
 Zum Starten der Anwendung:
 
-1. Zum Konfigurieren der Datenbankverbindung muss zu erst "/InsuranceCalc/src/main/resources/application.properties" angepasst werden. 
+1. Zum Konfigurieren der Datenbankverbindung muss "/InsuranceCalc/src/main/resources/application.properties" angepasst werden. 
    Dazu müssen folgende Properties angepasst werden:
      1. url = URL zur Datenbank
      2. username = Benutzername für die Datenbank
