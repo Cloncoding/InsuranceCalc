@@ -48,6 +48,11 @@ public class DbService
 		return premiumRepository.save(premium);
 	}
 	
+	public List<Premium> getAllPremiums()
+	{
+		return premiumRepository.findAll();
+	}
+	
 	
 	public boolean importRegions(String csv)
 	{

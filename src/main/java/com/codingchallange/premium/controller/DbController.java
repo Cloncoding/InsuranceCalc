@@ -5,6 +5,7 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,5 +48,12 @@ public class DbController
 		Premium saved = dbService.saveCalculation(premium);
 		
 		return ResponseEntity.created(URI.create(Consts.URL_DB_PREMIUM + saved.getId())).body(saved);
+	}
+	
+	
+	@GetMapping(Consts.URL_DB_SHOW)
+	public ResponseEntity<Object[]> getAllPremiums()
+	{
+		return ResponseEntity.ok(dbService.getAllPremiums().toArray());
 	}
 }
