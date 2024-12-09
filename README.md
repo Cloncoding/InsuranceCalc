@@ -19,3 +19,6 @@ Zum Starten der Anwendung:
    Dieser Import muss nach dem regions-Import laufen, da die Faktoren auf den Bundesländern der "regions" basieren.
 
 4. Nach dem Import kann "http://localhost:8080/" aufgerufen werden (Web Gui für die Berechnung der Prämie)
+
+5. Um die persistenten Berechnungen anzuzeigen, muss folgender GET ausgeführt werden:
+   "GET http://localhost:8080/api/premium/show"
